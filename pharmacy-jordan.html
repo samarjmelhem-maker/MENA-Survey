@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استبيان: تعزيز الخدمات الصيدلانية المعرفية لصحة المرأة</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', 'Tahoma', sans-serif;
+            direction: rtl;
+            text-align: right;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            background: #f5f5f5;
+            line-height: 1.8;
+        }
+        
+        .page {
+            background: white;
+            padding: 60px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a5490;
+            font-size: 22px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #1a5490;
+            padding-bottom: 15px;
+        }
+        
+        .intro {
+            margin-bottom: 25px;
+            line-height: 2;
+        }
+        
+        .intro p {
+            margin-bottom: 15px;
+        }
+        
+        .instructions {
+            background: #e8f4f8;
+            padding: 20px;
+            margin: 25px 0;
+            border-right: 4px solid #1a5490;
+        }
+        
+        .instructions h3 {
+            margin-bottom: 12px;
+            color: #1a5490;
+        }
+        
+        .instructions ul {
+            list-style: none;
+            padding-right: 0;
+        }
+        
+        .instructions li:before {
+            content: "• ";
+            color: #1a5490;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .note {
+            background: #fff9e6;
+            padding: 12px 20px;
+            margin: 20px 0;
+            border-right: 4px solid #f0ad4e;
+            font-weight: bold;
+        }
+        
+        .section-header {
+            background: #2c5f8d;
+            color: white;
+            padding: 12px 20px;
+            margin: 30px 0 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .section-header-orange {
+            background: #d9534f;
+            color: white;
+            padding: 12px 20px;
+            margin: 30px 0 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .section-header-purple {
+            background: #6f42c1;
+            color: white;
+            padding: 12px 20px;
+            margin: 30px 0 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .section-header-green {
+            background: #28a745;
+            color: white;
+            padding: 12px 20px;
+            margin: 30px 0 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .section-header-red {
+            background: #c92a2a;
+            color: white;
+            padding: 12px 20px;
+            margin: 30px 0 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .question {
+            margin: 25px 0;
+        }
+        
+        .question-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .question-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 12px 0;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        input[type="radio"], input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+        
+        .grid-question {
+            margin: 25px 0;
+            border: 1px solid #ddd;
+            padding: 15px;
+            background: #fafafa;
+        }
+        
+        .grid-statement {
+            margin: 20px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .grid-statement:last-child {
+            border-bottom: none;
+        }
+        
+        .statement-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .grid-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .textarea-question {
+            margin: 25px 0;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+        
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .ranking-table th,
+        .ranking-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+        
+        .ranking-table th {
+            background: #f0f0f0;
+            font-weight: bold;
+        }
+        
+        .ranking-table input[type="number"] {
+            width: 80px;
+            padding: 6px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        
+        .thank-you {
+            background: #d4edda;
+            padding: 20px;
+            margin: 30px 0;
+            border-right: 4px solid #28a745;
+            text-align: center;
+        }
+        
+        .thank-you h3 {
+            color: #155724;
+            margin-bottom: 10px;
+        }
+        
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        button {
+            background: #1a5490;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #144070;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+            
+            .page {
+                box-shadow: none;
+                padding: 40px;
+            }
+            
+            button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<style>
+.survey-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-btn {
+    background: white;
+    color: #667eea;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(255,255,255,0.3);
+}
+
+.nav-title {
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+body {
+    padding-top: 70px !important;
+}
+
+@media (max-width: 768px) {
+    .survey-navigation {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+</style>
+
+<div class="survey-navigation">
+    <a href="../index.html" class="nav-btn">
+        <span>🏠</span>
+        <span>العودة للرئيسية | Home</span>
+    </a>
+    <div class="nav-title">منصة استبيانات صحة المرأة | MENA Women's Health Surveys</div>
+    <div></div>
+</div>
+
+    <div class="page">
+        <h1>استبيان: تعزيز الخدمات الصيدلانية المعرفية لصحة المرأة في<br>الصيدلة المجتمعية</h1>
+        
+        <div class="intro">
+            <p><strong>المحترم/ة الصيدلاني/الصيدلانية،</strong></p>
+            <p>ندعوك للمشاركة في دراسة بحثية بعنوان "تعزيز الخدمات الصيدلانية المعرفية لصحة المرأة في الصيدلة المجتمعية". تهدف هذه الدراسة إلى تقييم وتعزيز تقديم الخدمات الصيدلانية المعرفية التي تدعم صحة المرأة ضمن بيئة الصيدليات المجتمعية.</p>
+            <p>رأيك ضروري لتحديد الممارسات الحالية، والفجوات المحتملة، ومجالات التحسين في تقديم الرعاية الصيدلانية الموجهة لصحة المرأة. ستساهم نتائج هذه الدراسة في تطوير استراتيجيات تعزز دور الصيدلي في هذا المجال الحيوي من الصحة العامة.</p>
+        </div>
+        
+        <div class="instructions">
+            <h3>التعليمات:</h3>
+            <ul>
+                <li>يرجى الإجابة على جميع الأسئلة بدقة وصدق قدر الإمكان</li>
+                <li>إجاباتك سرية ومجهولة الهوية وسيتم استخدامها لأغراض البحث فقط</li>
+                <li>الوقت المقدر لإكمال هذا الاستبيان يصل إلى 10 دقائق</li>
+                <li>مشاركتك طوعية ونقدر ردها بشدة</li>
+            </ul>
+        </div>
+        
+        <div class="note">
+            ملاحظة: يشير الرمز (*) إلى سؤال مطلوب إجابته
+        </div>
+        
+        <div class="section-header">القسم الأول: الخلفية الديموغرافية والمهنية</div>
+        
+        <div class="question">
+            <div class="question-title">1. المحافظة التي تقيم فيها حاليًا *</div>
+            <div class="question-subtitle">يرجى تحديد المحافظة. اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q1" id="q1_1"><label for="q1_1">1. عمان</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_2"><label for="q1_2">2. إربد</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_3"><label for="q1_3">3. الزرقاء</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_4"><label for="q1_4">4. المفرق</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_5"><label for="q1_5">5. عجلون</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_6"><label for="q1_6">6. جرش</label></div>
+            </div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q1" id="q1_7"><label for="q1_7">7. مأدبا</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_8"><label for="q1_8">8. البلقاء</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_9"><label for="q1_9">9. الكرك</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_10"><label for="q1_10">10. الطفيلة</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_11"><label for="q1_11">11. معان</label></div>
+                <div class="option"><input type="radio" name="q1" id="q1_12"><label for="q1_12">12. العقبة</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">2. بيئة الصيدلية *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q2" id="q2_1"><label for="q2_1">1. حضرية</label></div>
+                <div class="option"><input type="radio" name="q2" id="q2_2"><label for="q2_2">2. ريفية</label></div>
+                <div class="option"><input type="radio" name="q2" id="q2_3"><label for="q2_3">3. ضاحية</label></div>
+                <div class="option"><input type="radio" name="q2" id="q2_4"><label for="q2_4">4. مخيم لاجئين</label></div>
+                <div class="option"><input type="radio" name="q2" id="q2_5"><label for="q2_5">5. أخرى</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">3. نوع الصيدلية *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q3" id="q3_1"><label for="q3_1">1. صيدلية مستقلة</label></div>
+                <div class="option"><input type="radio" name="q3" id="q3_2"><label for="q3_2">2. سلسلة صيدليات</label></div>
+                <div class="option"><input type="radio" name="q3" id="q3_3"><label for="q3_3">3. عيادة خارجية (مستشفى)</label></div>
+                <div class="option"><input type="radio" name="q3" id="q3_4"><label for="q3_4">4. أخرى</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">4. المنصب/الدور *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q4" id="q4_1"><label for="q4_1">1. موظف صيدلي</label></div>
+                <div class="option"><input type="radio" name="q4" id="q4_2"><label for="q4_2">2. مالك/مدير صيدلية</label></div>
+                <div class="option"><input type="radio" name="q4" id="q4_3"><label for="q4_3">3. أخرى</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">5. الجنس *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q5" id="q5_1"><label for="q5_1">1. ذكر</label></div>
+                <div class="option"><input type="radio" name="q5" id="q5_2"><label for="q5_2">2. أنثى</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">6. سنوات الممارسة *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q6" id="q6_1"><label for="q6_1">1. 0-5 سنوات</label></div>
+                <div class="option"><input type="radio" name="q6" id="q6_2"><label for="q6_2">2. 6-10 سنوات</label></div>
+                <div class="option"><input type="radio" name="q6" id="q6_3"><label for="q6_3">3. 11-15 سنة</label></div>
+                <div class="option"><input type="radio" name="q6" id="q6_4"><label for="q6_4">4. أكثر من 15 سنة</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">7. أعلى مؤهل علمي *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q7" id="q7_1"><label for="q7_1">1. بكالوريوس صيدلة</label></div>
+                <div class="option"><input type="radio" name="q7" id="q7_2"><label for="q7_2">2. دكتور صيدلة (PharmD)</label></div>
+                <div class="option"><input type="radio" name="q7" id="q7_3"><label for="q7_3">3. ماجستير صيدلة إكلينيكية</label></div>
+            </div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q7" id="q7_4"><label for="q7_4">4. ماجستير علوم صيدلانية</label></div>
+                <div class="option"><input type="radio" name="q7" id="q7_5"><label for="q7_5">5. دكتوراه</label></div>
+                <div class="option"><input type="radio" name="q7" id="q7_6"><label for="q7_6">6. أخرى</label></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="section-header-green">القسم الثاني: المعرفة والتدريب في الخدمات الصيدلانية المعرفية</div>
+        
+        <div class="question">
+            <div class="question-title">8. ما مدى معرفتك بالخدمات الصيدلانية المعرفية؟ *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q8" id="q8_1"><label for="q8_1">1. غير مطلع</label></div>
+                <div class="option"><input type="radio" name="q8" id="q8_2"><label for="q8_2">2. مطلع قليلًا</label></div>
+                <div class="option"><input type="radio" name="q8" id="q8_3"><label for="q8_3">3. مطلع إلى حد ما</label></div>
+                <div class="option"><input type="radio" name="q8" id="q8_4"><label for="q8_4">4. مطلع جدًا</label></div>
+                <div class="option"><input type="radio" name="q8" id="q8_5"><label for="q8_5">5. مطلع للغاية</label></div>
+            </div>
+        </div>
+        
+        <div class="question">
+            <div class="question-title">9. هل تلقيت تدريبًا رسميًا أو شهادة في الخدمات الصيدلانية المعرفية؟ *</div>
+            <div class="question-subtitle">اختر خيارًا واحدًا فقط.</div>
+            <div class="options">
+                <div class="option"><input type="radio" name="q9" id="q9_1"><label for="q9_1">1. نعم</label></div>
+                <div class="option"><input type="radio" name="q9" id="q9_2"><label for="q9_2">2. لا</label></div>
+                <div class="option"><input type="radio" name="q9" id="q9_3"><label for="q9_3">3. أخرى</label></div>
+            </div>
+        </div>
+        
+        <div class="section-header-purple">القسم الثالث: المواقف والعوائق تجاه تطبيق الخدمات الصيدلانية المعرفية</div>
+        
+        <div class="grid-question">
+            <div class="question-title">10. تقييم المواقف والعوائق *</div>
+            <div class="question-subtitle">يرجى تحديد مدى موافقتك أو اعتراضك على كل من العبارات التالية المتعلقة بالخدمات الصيدلانية المعرفية ودورها في ممارسة الصيدلة المجتمعية. استخدم المقياس أدناه لتحديد الإجابة التي تعكس رأيك بأفضل شكل:</div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تعزز نتائج صحة المرضى</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_1"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_1"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_1"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_1"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_1"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_1"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تقلل من الأخطاء الدوائية وتحسن سلامة المرضى</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_2"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_2"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_2"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_2"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_2"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_2"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تساهم في تحسين إدارة الأمراض المزمنة</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_3"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_3"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_3"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_3"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_3"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_3"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تقلل من معدلات إعادة دخول المستشفى</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_4"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_4"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_4"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_4"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_4"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_4"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تؤدي إلى توفير التكاليف في نظام الرعاية الصحية</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_5"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_5"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_5"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_5"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_5"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_5"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تعزز التعاون بين المهن الصحية في فرق الرعاية</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_6"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_6"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_6"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_6"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_6"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_6"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">الخدمات الصيدلانية المعرفية تزيد رضا المرضى عن خدمات الصيدلة</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_7"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_7"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_7"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_7"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_7"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_7"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">ثقة محدودة في تقديم الخدمات الصيدلانية المعرفية بشكل مستقل</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_8"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_8"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_8"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_8"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_8"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_8"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">نقص الحوافز للمشاركة في أنشطة الخدمات الصيدلانية المعرفية</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_9"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_9"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_9"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_9"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_9"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_9"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">تفضيل الأدوار التقليدية في صرف الأدوية على حساب المشاركة في الخدمات الصيدلانية المعرفية</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_10"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_10"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_10"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_10"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_10"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_10"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">تدريب ومعرفة غير كافيين خاصة بالخدمات الصيدلانية المعرفية</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_11"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_11"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_11"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_11"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_11"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_11"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">تحديات في إدارة الوقت بسبب المسؤوليات المتنافسة</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_12"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_12"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_12"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_12"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_12"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_12"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">وعي محدود بفوائد الخدمات الصيدلانية المعرفية بين الصيادلة</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_13"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_13"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_13"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_13"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_13"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_13"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">شعور بعدم الراحة عند تقديم الاستشارات للمرضى في مجالات صحية حساسة</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q10_14"><label>1. أعارض بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_14"><label>2. أعارض</label></div>
+                    <div class="option"><input type="radio" name="q10_14"><label>3. محايد</label></div>
+                    <div class="option"><input type="radio" name="q10_14"><label>4. أوافق</label></div>
+                    <div class="option"><input type="radio" name="q10_14"><label>5. أوافق بشدة</label></div>
+                    <div class="option"><input type="radio" name="q10_14"><label>6. غير مطبق</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="section-header-orange">القسم الرابع: الخدمات الصيدلانية المعرفية الحالية لصحة المرأة</div>
+        
+        <div class="grid-question">
+            <div class="question-title">11. تكرار تقديم الخدمات *</div>
+            <div class="question-subtitle">يرجى تحديد عدد مرات تقديمك للخدمات الصيدلانية المعرفية المتعلقة بصحة المرأة في ممارستك الحالية. استخدم المقياس أدناه لتحديد الإجابة التي تعكس خبرتك:</div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">مراجعات الأدوية قبل/بعد الولادة</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_1"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_1"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_1"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_1"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_1"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">استشارات وسائل منع الحمل</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_2"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_2"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_2"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_2"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_2"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">إدارة الأمراض المزمنة (مثل: السكري، السمنة، ارتفاع ضغط الدم)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_3"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_3"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_3"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_3"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_3"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">إدارة أعراض سن اليأس</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_4"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_4"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_4"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_4"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_4"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">استشارات الصحة ونمط الحياة (مثل: النظام الغذائي، النشاط البدني)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_5"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_5"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_5"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_5"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_5"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">خدمات مساعدة لعلاج السرطان (أمراض نسائية)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_6"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_6"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_6"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_6"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_6"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">دعم الفحوصات (مثل: سرطان الثدي، سرطان عنق الرحم، فيروس HPV)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_7"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_7"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_7"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_7"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_7"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">خدمات التطعيم (مثل: إنفلونزا، كوفيد-19، HPV، التهاب الكبد B)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_8"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_8"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_8"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_8"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_8"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">خدمات الإقلاع عن التدخين</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_9"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_9"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_9"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_9"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_9"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">دعم الخصوبة واستشارات ما قبل الحمل</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_10"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_10"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_10"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_10"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_10"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">دعم الصحة النفسية (صحة المرأة)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_11"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_11"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_11"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_11"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_11"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">استشارات الصحة الجنسية والأمراض المنقولة جنسيًا</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_12"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_12"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_12"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_12"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_12"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">إدارة الألم لدى النساء (مثل: عسر الطمث، بطانة الرحم)</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_13"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_13"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_13"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_13"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_13"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">فحص هشاشة العظام وإدارة صحة العظام</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_14"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_14"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_14"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_14"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_14"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+            
+            <div class="grid-statement">
+                <div class="statement-text">استشارات إدارة الوزن</div>
+                <div class="grid-options">
+                    <div class="option"><input type="radio" name="q11_15"><label>1. دائمًا</label></div>
+                    <div class="option"><input type="radio" name="q11_15"><label>2. غالبًا</label></div>
+                    <div class="option"><input type="radio" name="q11_15"><label>3. أحيانًا</label></div>
+                    <div class="option"><input type="radio" name="q11_15"><label>4. نادرًا</label></div>
+                    <div class="option"><input type="radio" name="q11_15"><label>5. أبدًا</label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="section-header-red">القسم الخامس: أولويات صحة المرأة</div>
+        
+        <div class="question">
+            <div class="question-title">12. ترتيب الأولويات *</div>
+            <div class="question-subtitle">يرجى ترتيب مجالات خدمات صحة المرأة التالية بناءً على ما تعتبره أهم الأولويات للخدمات الصيدلانية المعرفية في الصيدلة المجتمعية. امنح كل مجال ترتيبًا فريدًا من 1 إلى 9، حيث 1 = أولوية قصوى و 9 = أولوية منخفضة. يجب استخدام كل رقم مرة واحدة فقط.</div>
+            
+            <table class="ranking-table">
+                <tr>
+                    <th>مجال الخدمة</th>
+                    <th>الترتيب (1-9)</th>
+                </tr>
+                <tr>
+                    <td>الصحة الإنجابية والوصول إلى وسائل منع الحمل</td>
+                    <td><input type="number" min="1" max="9" name="rank1"></td>
+                </tr>
+                <tr>
+                    <td>رعاية الأمومة وما قبل الولادة</td>
+                    <td><input type="number" min="1" max="9" name="rank2"></td>
+                </tr>
+                <tr>
+                    <td>إدارة الأمراض المزمنة لدى النساء</td>
+                    <td><input type="number" min="1" max="9" name="rank3"></td>
+                </tr>
+                <tr>
+                    <td>دعم الصحة النفسية</td>
+                    <td><input type="number" min="1" max="9" name="rank4"></td>
+                </tr>
+                <tr>
+                    <td>إدارة سن اليأس</td>
+                    <td><input type="number" min="1" max="9" name="rank5"></td>
+                </tr>
+                <tr>
+                    <td>إدارة الحالات الصحية الشائعة (مثل: التهابات المسالك البولية)</td>
+                    <td><input type="number" min="1" max="9" name="rank6"></td>
+                </tr>
+                <tr>
+                    <td>دعم إدارة سرطان الثدي</td>
+                    <td><input type="number" min="1" max="9" name="rank7"></td>
+                </tr>
+                <tr>
+                    <td>تحسين صحة ما قبل الحمل</td>
+                    <td><input type="number" min="1" max="9" name="rank8"></td>
+                </tr>
+                <tr>
+                    <td>نهج شامل لصحة المرأة</td>
+                    <td><input type="number" min="1" max="9" name="rank9"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="textarea-question">
+            <div class="question-title">13. الدعم الإضافي المطلوب</div>
+            <div class="question-subtitle">ما هو الدعم الإضافي الذي تحتاجه لتحسين الخدمات الصيدلانية المعرفية لصحة المرأة؟</div>
+            <textarea name="q13" rows="5"></textarea>
+        </div>
+        
+        <div class="textarea-question">
+            <div class="question-title">14. الشراكات المجتمعية</div>
+            <div class="question-subtitle">كيف يمكن أن تعزز الشراكات مع المنظمات المجتمعية تقديم الخدمات الصيدلانية المعرفية للنساء المحرومات؟</div>
+            <textarea name="q14" rows="5"></textarea>
+        </div>
+        
+        <div class="thank-you">
+            <h3>شكر وتقدير</h3>
+            <p>نشكرك على وقتك ومشاركتك القيمة في هذه الدراسة. إجاباتك ستساهم في تطوير وتحسين الخدمات الصيدلانية المقدمة للنساء في المجتمع.</p>
+        </div>
+        
+        
+    </div>
+    
+    <script>
+        // Form submission and data collection functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('نموذج الاستبيان جاهز للتعبئة');
+        });
+
+        </script>
+
+<!-- MENA Survey Integration -->
+<script>
+const SURVEY_CONFIG = {
+  webhookURL: 'https://script.google.com/macros/s/AKfycbyBYzwuR5HHvDRwfWJlAF17g6X5Mx8RND4Q1CVgHqocoDNCchX34BCQT1H2OU0nDqLQ/exec',
+  surveyType: 'pharmacy',
+  country: 'jordan',
+  submitButtonText: 'إرسال الاستبيان'
+};
+
+(function() {
+  'use strict';
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSurvey);
+  } else {
+    initSurvey();
+  }
+  
+  function initSurvey() {
+    console.log('✅ Initializing MENA Survey Integration...');
+    console.log('📋 Survey:', SURVEY_CONFIG.surveyType, '-', SURVEY_CONFIG.country.toUpperCase());
+    addSubmitButton();
+    addLoadingOverlay();
+    addMessageContainer();
+  }
+  
+  function addSubmitButton() {
+    const btnContainer = document.createElement('div');
+    btnContainer.style.cssText = 'text-align:center;margin:40px 0;padding:30px 20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2)';
+    
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.id = 'mena-submit-btn';
+    btn.innerHTML = '<span style="font-size:1.2em">📝</span> <span>' + SURVEY_CONFIG.submitButtonText + '</span>';
+    btn.style.cssText = 'background:white;color:#667eea;border:none;padding:20px 60px;font-size:1.5em;font-weight:bold;border-radius:12px;cursor:pointer;transition:all 0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.2);font-family:Arial,sans-serif';
+    
+    btn.onmouseenter = function() { this.style.transform = 'scale(1.05)'; this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)'; };
+    btn.onmouseleave = function() { this.style.transform = 'scale(1)'; this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)'; };
+    btn.onclick = handleFormSubmit;
+    
+    btnContainer.appendChild(btn);
+    document.body.appendChild(btnContainer);
+    console.log('✅ Submit button added');
+  }
+  
+  function addLoadingOverlay() {
+    const overlay = document.createElement('div');
+    overlay.id = 'mena-loading';
+    overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center';
+    overlay.innerHTML = '<div style="text-align:center;color:white"><div style="border:8px solid #f3f3f3;border-top:8px solid #667eea;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;margin:0 auto 20px"></div><h2>جاري الإرسال...</h2><p>Submitting...</p></div>';
+    
+    const style = document.createElement('style');
+    style.textContent = '@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+  }
+  
+  function addMessageContainer() {
+    const container = document.createElement('div');
+    container.id = 'mena-msg';
+    container.style.cssText = 'display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:40px;border-radius:15px;box-shadow:0 10px 50px rgba(0,0,0,0.3);z-index:10000;max-width:500px;text-align:center';
+    document.body.appendChild(container);
+  }
+  
+  function showLoading() { document.getElementById('mena-loading').style.display = 'flex'; }
+  function hideLoading() { document.getElementById('mena-loading').style.display = 'none'; }
+  
+  function showMessage(msgType, title, message) {
+    const container = document.getElementById('mena-msg');
+    const emoji = msgType === 'success' ? '✅' : '❌';
+    const color = msgType === 'success' ? '#4CAF50' : '#f44336';
+    container.innerHTML = '<div style="font-size:4em;margin-bottom:20px">' + emoji + '</div><h2 style="color:' + color + ';margin-bottom:15px">' + title + '</h2><p style="font-size:1.1em;line-height:1.6;margin-bottom:30px">' + message + '</p><button onclick="document.getElementById(\'mena-msg\').style.display=\'none\'" style="background:' + color + ';color:white;border:none;padding:15px 40px;font-size:1.1em;border-radius:8px;cursor:pointer">حسناً / OK</button>';
+    container.style.display = 'block';
+  }
+  
+  function collectFormData() {
+    const data = {};
+    const inputs = document.querySelectorAll('input,select,textarea');
+    
+    inputs.forEach(function(input, idx) {
+      let val = null;
+      const fieldName = input.name || input.id || 'question_' + (idx + 1);
+      
+      if (input.type === 'radio') {
+        if (input.checked) val = input.value || 'selected';
+      } else if (input.type === 'checkbox') {
+        if (!data[fieldName]) data[fieldName] = [];
+        if (input.checked) data[fieldName].push(input.value || 'checked');
+      } else if (input.tagName === 'SELECT') {
+        val = input.options[input.selectedIndex] ? input.options[input.selectedIndex].value : null;
+      } else if (input.tagName === 'TEXTAREA' || input.type === 'text' || input.type === 'number') {
+        val = input.value;
+      }
+      
+      if (val !== null && val !== undefined && val !== '' && input.type !== 'checkbox') {
+        data[fieldName] = val;
+      }
+    });
+    
+    Object.keys(data).forEach(function(key) {
+      if (Array.isArray(data[key])) data[key] = data[key].join(', ');
+    });
+    
+    return data;
+  }
+  
+  function validateData(data) {
+    if (Object.keys(data).length === 0) {
+      return {valid: false, message: 'الرجاء ملء الإستبيان / Please fill out the survey'};
+    }
+    let hasData = false;
+    for (let key in data) {
+      if (data[key] !== null && data[key] !== undefined && data[key] !== '') {
+        hasData = true;
+        break;
+      }
+    }
+    if (!hasData) {
+      return {valid: false, message: 'الرجاء الإجابة على الأسئلة / Please answer the questions'};
+    }
+    return {valid: true};
+  }
+  
+  function generateHash() {
+    try {
+      const str = [navigator.userAgent, navigator.language, new Date().toDateString(), screen.width + 'x' + screen.height].join('|');
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const chr = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash = hash & hash;
+      }
+      return 'hash_' + Math.abs(hash);
+    } catch (err) {
+      return 'hash_' + Date.now();
+    }
+  }
+  
+  async function handleFormSubmit() {
+    console.log('📤 Handling form submission...');
+    
+    const responses = collectFormData();
+    console.log('📋 Collected responses:', responses);
+    
+    const validation = validateData(responses);
+    if (!validation.valid) {
+      console.log('❌ Validation failed:', validation.message);
+      showMessage('error', 'خطأ / Error', validation.message);
+      return;
+    }
+    
+    showLoading();
+    
+    try {
+      const ipHash = generateHash();
+      const payload = {
+        surveyType: SURVEY_CONFIG.surveyType,
+        country: SURVEY_CONFIG.country,
+        ipHash: ipHash,
+        responses: responses
+      };
+      
+      console.log('🚀 Submitting data:', payload);
+      
+      await fetch(SURVEY_CONFIG.webhookURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      
+      hideLoading();
+      console.log('✅ Submission successful!');
+      
+      showMessage('success', 'تم الإرسال بنجاح! / Success!', 'شكراً لمشاركتك في الإستبيان. تم حفظ إجاباتك بنجاح.<br><br>Thank you! Your responses have been saved successfully.');
+      
+      const submitBtn = document.getElementById('mena-submit-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.5';
+        submitBtn.style.cursor = 'not-allowed';
+        submitBtn.innerHTML = '✅ تم الإرسال / Submitted';
+      }
+      
+    } catch (err) {
+      console.error('❌ Submission error:', err);
+      hideLoading();
+      showMessage('error', 'خطأ / Error', 'عذراً، حدث خطأ. الرجاء المحاولة مرة أخرى.<br><br>Sorry, an error occurred. Please try again.');
+    }
+  }
+  
+})();
+</script>
+
+</body>
+</html>

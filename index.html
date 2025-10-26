@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="منصة استبيانات صحة المرأة في منطقة الشرق الأوسط وشمال أفريقيا - MENA Women's Health Survey Platform">
+    <title>منصة استبيانات صحة المرأة | MENA Women's Health Surveys</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(144, 238, 144, 0.9);
+            color: #2d5016;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .survey-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .survey-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .survey-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .survey-card.pharmacy {
+            border-top: 5px solid #667eea;
+        }
+
+        .survey-card.digital {
+            border-top: 5px solid #90EE90;
+        }
+
+        .survey-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .survey-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .survey-card .country {
+            color: #667eea;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .survey-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .survey-card .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .survey-card .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .info-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .info-section li:last-child {
+            border-bottom: none;
+        }
+
+        .info-section li:before {
+            content: "✓ ";
+            color: #90EE90;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-left: 10px;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin: 10px 0;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #90EE90;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.3em;
+            }
+
+            .survey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-section {
+                padding: 25px;
+            }
+        }
+
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #90EE90, transparent);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🏥 منصة استبيانات صحة المرأة</h1>
+            <p class="subtitle">MENA Women's Health Survey Platform</p>
+            <p>ندعوك للمشاركة في دراسة بحثية تهدف لتحسين الخدمات الصيدلانية والرقمية المقدمة لصحة المرأة في منطقة الشرق الأوسط وشمال أفريقيا</p>
+            <p style="font-size: 0.95em;">We invite you to participate in a research study aimed at improving pharmaceutical and digital services for women's health in the MENA region</p>
+            <span class="badge">✓ مجهول الهوية | Anonymous</span>
+            <span class="badge">✓ آمن | Secure</span>
+            <span class="badge">✓ سريع | Quick</span>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">8</div>
+                <div class="stat-label">استبيانات<br>Surveys</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">دول<br>Countries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">دقيقة<br>Minutes</div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Survey Cards -->
+        <div class="survey-grid">
+            <!-- Pharmacy Surveys -->
+            <a href="surveys/pharmacy-ksa.html" class="survey-card pharmacy">
+                <div class="survey-icon">💊</div>
+                <h3>استبيان الصيدلة</h3>
+                <div class="country">🇸🇦 السعودية | KSA</div>
+                <p>استبيان حول الخدمات الصيدلانية المقدمة لصحة المرأة في المملكة العربية السعودية</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <a href="surveys/pharmacy-jordan.html" class="survey-card pharmacy">
+                <div class="survey-icon">💊</div>
+                <h3>استبيان الصيدلة</h3>
+                <div class="country">🇯🇴 الأردن | Jordan</div>
+                <p>استبيان حول الخدمات الصيدلانية المقدمة لصحة المرأة في الأردن</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <a href="surveys/pharmacy-algeria.html" class="survey-card pharmacy">
+                <div class="survey-icon">💊</div>
+                <h3>استبيان الصيدلة</h3>
+                <div class="country">🇩🇿 الجزائر | Algeria</div>
+                <p>استبيان حول الخدمات الصيدلانية المقدمة لصحة المرأة في الجزائر</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <a href="surveys/pharmacy-uae.html" class="survey-card pharmacy">
+                <div class="survey-icon">💊</div>
+                <h3>استبيان الصيدلة</h3>
+                <div class="country">🇦🇪 الإمارات | UAE</div>
+                <p>استبيان حول الخدمات الصيدلانية المقدمة لصحة المرأة في الإمارات</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <!-- Digital Surveys -->
+            <a href="surveys/digital-ksa.html" class="survey-card digital">
+                <div class="survey-icon">📱</div>
+                <h3>الاستبيان الرقمي</h3>
+                <div class="country">🇸🇦 السعودية | KSA</div>
+                <p>استبيان حول الخدمات الرقمية والتطبيقات الصحية لصحة المرأة في السعودية</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <a href="surveys/digital-uae.html" class="survey-card digital">
+                <div class="survey-icon">📱</div>
+                <h3>الاستبيان الرقمي</h3>
+                <div class="country">🇦🇪 الإمارات | UAE</div>
+                <p>استبيان حول الخدمات الرقمية والتطبيقات الصحية لصحة المرأة في الإمارات</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <a href="surveys/digital-jordan.html" class="survey-card digital">
+                <div class="survey-icon">📱</div>
+                <h3>الاستبيان الرقمي</h3>
+                <div class="country">🇯🇴 الأردن | Jordan</div>
+                <p>استبيان حول الخدمات الرقمية والتطبيقات الصحية لصحة المرأة في الأردن</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+
+            <a href="surveys/digital-algeria.html" class="survey-card digital">
+                <div class="survey-icon">📱</div>
+                <h3>الاستبيان الرقمي</h3>
+                <div class="country">🇩🇿 الجزائر | Algeria</div>
+                <p>استبيان حول الخدمات الرقمية والتطبيقات الصحية لصحة المرأة في الجزائر</p>
+                <span class="btn">ابدأ الاستبيان →</span>
+            </a>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h2>📋 معلومات مهمة | Important Information</h2>
+            <ul>
+                <li>جميع الإجابات سرية ومجهولة الهوية تماماً | All responses are completely confidential and anonymous</li>
+                <li>لا يتم جمع أي معلومات شخصية تعرّف عن هويتك | No personal identifying information is collected</li>
+                <li>المشاركة طوعية ويمكنك التوقف في أي وقت | Participation is voluntary and you can stop at any time</li>
+                <li>مدة الاستبيان تقريباً 10-15 دقيقة | Survey duration is approximately 10-15 minutes</li>
+                <li>البيانات ستستخدم لأغراض البحث العلمي فقط | Data will be used for research purposes only</li>
+                <li>نظام منع التكرار مفعّل - استجابة واحدة لكل شخص | Duplicate prevention enabled - one response per person</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2024 MENA Women's Health Research Project</p>
+            <p>شكراً لمساهمتك في تحسين الخدمات الصحية | Thank you for contributing to improving health services</p>
+            <p style="font-size: 0.9em; margin-top: 20px;">🔒 جميع البيانات محمية ومشفرة | All data is protected and encrypted</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation on load
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.survey-card').forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.transition = 'all 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

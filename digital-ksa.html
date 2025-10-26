@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استبيان: النهوض بالتكامل الصحي الرقمي في صحة المرأة - السعودية</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Arial', 'Tahoma', sans-serif;
+            direction: rtl;
+            text-align: right;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #1e40af;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+            padding: 15px;
+            background-color: #eff6ff;
+            border-bottom: 3px solid #1e40af;
+        }
+        
+        .header-info {
+            background-color: #dbeafe;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-right: 4px solid #2563eb;
+        }
+        
+        .header-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .header-info ul {
+            margin: 10px 0 10px 20px;
+        }
+        
+        .header-info li {
+            margin: 3px 0;
+        }
+        
+        .required {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background-color: #1e40af;
+            color: white;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .section-header.green { background-color: #059669; }
+        .section-header.purple { background-color: #7c3aed; }
+        .section-header.orange { background-color: #ea580c; }
+        .section-header.red { background-color: #dc2626; }
+        
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9fafb;
+            border-right: 3px solid #e5e7eb;
+        }
+        
+        .question-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 14px;
+        }
+        
+        .options {
+            margin: 10px 0;
+        }
+        
+        .option {
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+        }
+        
+        .option input[type="radio"],
+        .option input[type="checkbox"] {
+            margin-left: 10px;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+        }
+        
+        .option label {
+            vertical-align: middle;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .grid-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .likert-scale {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .scale-header {
+            font-size: 13px;
+            color: #6b7280;
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #f3f4f6;
+        }
+        
+        .scale-item {
+            margin: 15px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .scale-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .scale-options {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .scale-option {
+            flex: 1;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .scale-option input[type="radio"] {
+            display: block;
+            margin: 5px auto;
+        }
+        
+        .scale-option label {
+            display: block;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        textarea, input[type="text"] {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+            resize: vertical;
+        }
+        
+        input[type="text"] {
+            min-height: 40px;
+        }
+        
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #dbeafe;
+            text-align: center;
+            border-top: 3px solid #2563eb;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .submit-btn {
+            background-color: #2563eb;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1e40af;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .submit-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<style>
+.survey-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-btn {
+    background: white;
+    color: #667eea;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(255,255,255,0.3);
+}
+
+.nav-title {
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+body {
+    padding-top: 70px !important;
+}
+
+@media (max-width: 768px) {
+    .survey-navigation {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+</style>
+
+<div class="survey-navigation">
+    <a href="../index.html" class="nav-btn">
+        <span>🏠</span>
+        <span>العودة للرئيسية | Home</span>
+    </a>
+    <div class="nav-title">منصة استبيانات صحة المرأة | MENA Women's Health Surveys</div>
+    <div></div>
+</div>
+
+    <div class="container">
+        <h1>استبيان: النهوض بالتكامل الصحي الرقمي في صحة المرأة<br>خدمات الصيدلة</h1>
+        
+        <div class="header-info">
+            <p><strong>عزيزي/عزيزتي الصيدلي/الصيدلانية،</strong></p>
+            <p>ندعوك للمشاركة في استبيان بحثي يهدف إلى استكشاف دمج تقنيات الصحة الرقمية في خدمات صحة المرأة ضمن الممارسة الصيدلانية المجتمعية.</p>
+            <ul>
+                <li>المشاركة طوعية ومجهولة الهوية</li>
+                <li>الوقت المقدر: 10 دقائق</li>
+                <li><span class="required">**</span> يشير إلى الإلزامية إجابة السؤال</li>
+            </ul>
+        </div>
+        
+        <form id="surveyForm">
+            <!-- القسم الأول -->
+            <div class="section">
+                <div class="section-header">القسم الأول: الخلفية الديموغرافية والمهنية</div>
+                
+                <div class="question">
+                    <label class="question-label">1. المنطقة الإدارية التي تقيم فيها حالياً <span class="required">*</span></label>
+                    <div class="grid-options">
+                        <div class="option"><input type="radio" name="q1" value="1" id="q1_1"><label for="q1_1">1. الرياض</label></div>
+                        <div class="option"><input type="radio" name="q1" value="2" id="q1_2"><label for="q1_2">2. مكة المكرمة</label></div>
+                        <div class="option"><input type="radio" name="q1" value="3" id="q1_3"><label for="q1_3">3. المدينة المنورة</label></div>
+                        <div class="option"><input type="radio" name="q1" value="4" id="q1_4"><label for="q1_4">4. القصيم</label></div>
+                        <div class="option"><input type="radio" name="q1" value="5" id="q1_5"><label for="q1_5">5. الشرقية</label></div>
+                        <div class="option"><input type="radio" name="q1" value="6" id="q1_6"><label for="q1_6">6. عسير</label></div>
+                        <div class="option"><input type="radio" name="q1" value="7" id="q1_7"><label for="q1_7">7. تبوك</label></div>
+                        <div class="option"><input type="radio" name="q1" value="8" id="q1_8"><label for="q1_8">8. حائل</label></div>
+                        <div class="option"><input type="radio" name="q1" value="9" id="q1_9"><label for="q1_9">9. الحدود الشمالية</label></div>
+                        <div class="option"><input type="radio" name="q1" value="10" id="q1_10"><label for="q1_10">10. جازان</label></div>
+                        <div class="option"><input type="radio" name="q1" value="11" id="q1_11"><label for="q1_11">11. نجران</label></div>
+                        <div class="option"><input type="radio" name="q1" value="12" id="q1_12"><label for="q1_12">12. الباحة</label></div>
+                        <div class="option"><input type="radio" name="q1" value="13" id="q1_13"><label for="q1_13">13. الجوف</label></div>
+                        
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">2. البيئة الصيدلانية: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q2" value="1" id="q2_1"><label for="q2_1">1. حضرية</label></div>
+                        <div class="option"><input type="radio" name="q2" value="2" id="q2_2"><label for="q2_2">2. ريفية</label></div>
+                        <div class="option"><input type="radio" name="q2" value="3" id="q2_3"><label for="q2_3">3. ضاحية</label></div>
+                        <div class="option"><input type="radio" name="q2" value="4" id="q2_4"><label for="q2_4">4. مخيم لاجئين</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">3. نوع الصيدلية: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q3" value="1" id="q3_1"><label for="q3_1">1. صيدلية مستقلة</label></div>
+                        <div class="option"><input type="radio" name="q3" value="2" id="q3_2"><label for="q3_2">2. سلسلة صيدليات</label></div>
+                        <div class="option"><input type="radio" name="q3" value="3" id="q3_3"><label for="q3_3">3. عيادة خارجية (مستشفى)</label></div>
+                        <div class="option"><input type="radio" name="q3" value="4" id="q3_4"><label for="q3_4">4. أخرى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">4. المنصب/الدور: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q4" value="1" id="q4_1"><label for="q4_1">1. صيدلي موظف</label></div>
+                        <div class="option"><input type="radio" name="q4" value="2" id="q4_2"><label for="q4_2">2. مدير/مالك صيدلية</label></div>
+                        <div class="option"><input type="radio" name="q4" value="3" id="q4_3"><label for="q4_3">3. أخرى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">5. الجنس: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q5" value="1" id="q5_1"><label for="q5_1">1. ذكر</label></div>
+                        <div class="option"><input type="radio" name="q5" value="2" id="q5_2"><label for="q5_2">2. أنثى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">6. سنوات الممارسة: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q6" value="1" id="q6_1"><label for="q6_1">1. 0-5 سنوات</label></div>
+                        <div class="option"><input type="radio" name="q6" value="2" id="q6_2"><label for="q6_2">2. 6-10 سنوات</label></div>
+                        <div class="option"><input type="radio" name="q6" value="3" id="q6_3"><label for="q6_3">3. 11-15 سنة</label></div>
+                        <div class="option"><input type="radio" name="q6" value="4" id="q6_4"><label for="q6_4">4. أكثر من 15 سنة</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">7. أعلى مؤهل علمي: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q7" value="1" id="q7_1"><label for="q7_1">1. بكالوريوس صيدلة</label></div>
+                        <div class="option"><input type="radio" name="q7" value="2" id="q7_2"><label for="q7_2">2. دكتور صيدلة (PharmD)</label></div>
+                        <div class="option"><input type="radio" name="q7" value="3" id="q7_3"><label for="q7_3">3. ماجستير صيدلة سريرية</label></div>
+                        <div class="option"><input type="radio" name="q7" value="4" id="q7_4"><label for="q7_4">4. ماجستير علوم صيدلانية</label></div>
+                        <div class="option"><input type="radio" name="q7" value="5" id="q7_5"><label for="q7_5">5. دكتوراه</label></div>
+                        <div class="option"><input type="radio" name="q7" value="6" id="q7_6"><label for="q7_6">6. أخرى</label></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- القسم الثاني -->
+            <div class="section">
+                <div class="section-header green">القسم الثاني: المعرفة والمواقف والممارسات المتعلقة بالصحة الرقمية</div>
+                
+                <div class="question">
+                    <label class="question-label">8. مدى ثقتك في استخدام الأدوات الرقمية لتقديم خدمات صحة المرأة: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q8" value="1" id="q8_1"><label for="q8_1">1. غير واثق</label></div>
+                        <div class="option"><input type="radio" name="q8" value="2" id="q8_2"><label for="q8_2">2. واثق قليلاً</label></div>
+                        <div class="option"><input type="radio" name="q8" value="3" id="q8_3"><label for="q8_3">3. واثق إلى حد ما</label></div>
+                        <div class="option"><input type="radio" name="q8" value="4" id="q8_4"><label for="q8_4">4. واثق جداً</label></div>
+                        <div class="option"><input type="radio" name="q8" value="5" id="q8_5"><label for="q8_5">5. واثق للغاية</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">9. هل تلقيت تدريباً رسمياً في الصحة الرقمية أو الصيدلة عن بعد؟ <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q9" value="1" id="q9_1"><label for="q9_1">1. نعم</label></div>
+                        <div class="option"><input type="radio" name="q9" value="2" id="q9_2"><label for="q9_2">2. لا</label></div>
+                        <div class="option"><input type="radio" name="q9" value="3" id="q9_3"><label for="q9_3">3. أخرى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">10. كيف تقيم مستوى معرفتك بالصحة الرقمية: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q10" value="1" id="q10_1"><label for="q10_1">1. منخفض</label></div>
+                        <div class="option"><input type="radio" name="q10" value="2" id="q10_2"><label for="q10_2">2. متوسط</label></div>
+                        <div class="option"><input type="radio" name="q10" value="3" id="q10_3"><label for="q10_3">3. فوق المتوسط</label></div>
+                        <div class="option"><input type="radio" name="q10" value="4" id="q10_4"><label for="q10_4">4. عالٍ</label></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- القسم الثالث -->
+            <div class="section">
+                <div class="section-header purple">القسم الثالث: دمج الصحة الرقمية - المواقف والحواجز</div>
+                <div class="likert-scale">
+                    <div class="scale-header">
+                        مقياس الإجابة: 1 = أعارض بشدة | 2 = أعارض | 3 = محايد | 4 = أوافق | 5 = أوافق بشدة | 6 = لا ينطبق
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">أ) التطبيقات التشخيصية المدعومة بالذكاء الاصطناعي تعزز بشكل كبير قدرة الصيادلة على اكتشاف المشكلات المحددة للحالات</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11أ" value="1" id="q11أ_1">
+                                <label for="q11أ_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11أ" value="2" id="q11أ_2">
+                                <label for="q11أ_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11أ" value="3" id="q11أ_3">
+                                <label for="q11أ_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11أ" value="4" id="q11أ_4">
+                                <label for="q11أ_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11أ" value="5" id="q11أ_5">
+                                <label for="q11أ_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11أ" value="6" id="q11أ_6">
+                                <label for="q11أ_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ب) الأجهزة القابلة للارتداء وتطبيقات الصحة المحمولة تسهّل تطوير خطط علاج دوائي مخصصة يقودها الصيدلي</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ب" value="1" id="q11ب_1">
+                                <label for="q11ب_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ب" value="2" id="q11ب_2">
+                                <label for="q11ب_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ب" value="3" id="q11ب_3">
+                                <label for="q11ب_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ب" value="4" id="q11ب_4">
+                                <label for="q11ب_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ب" value="5" id="q11ب_5">
+                                <label for="q11ب_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ب" value="6" id="q11ب_6">
+                                <label for="q11ب_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ج) المخاوف المتعلقة بخصوصية البيانات وأمن المعلومات تشكل حواجز جوهرية أمام التبني الفعال لأدوات الصيدلة الرقمية</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ج" value="1" id="q11ج_1">
+                                <label for="q11ج_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ج" value="2" id="q11ج_2">
+                                <label for="q11ج_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ج" value="3" id="q11ج_3">
+                                <label for="q11ج_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ج" value="4" id="q11ج_4">
+                                <label for="q11ج_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ج" value="5" id="q11ج_5">
+                                <label for="q11ج_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ج" value="6" id="q11ج_6">
+                                <label for="q11ج_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">د) الاستشارات عن بعد تمكّن الصيادلة من توسيع نطاق خدمات الصيدلة المعرفية</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11د" value="1" id="q11د_1">
+                                <label for="q11د_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11د" value="2" id="q11د_2">
+                                <label for="q11د_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11د" value="3" id="q11د_3">
+                                <label for="q11د_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11د" value="4" id="q11د_4">
+                                <label for="q11د_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11د" value="5" id="q11د_5">
+                                <label for="q11د_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11د" value="6" id="q11د_6">
+                                <label for="q11د_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">هـ) دمج تقنيات الصحة الرقمية أمر حاسم لتطوير نماذج خدمات الصيدلة المعرفية</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11هـ" value="1" id="q11هـ_1">
+                                <label for="q11هـ_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11هـ" value="2" id="q11هـ_2">
+                                <label for="q11هـ_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11هـ" value="3" id="q11هـ_3">
+                                <label for="q11هـ_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11هـ" value="4" id="q11هـ_4">
+                                <label for="q11هـ_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11هـ" value="5" id="q11هـ_5">
+                                <label for="q11هـ_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11هـ" value="6" id="q11هـ_6">
+                                <label for="q11هـ_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">و) برامج محو الأمية الرقمية القوية ضرورية لضمان وصول المرضى بشكل عادل إلى الابتكارات</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11و" value="1" id="q11و_1">
+                                <label for="q11و_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11و" value="2" id="q11و_2">
+                                <label for="q11و_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11و" value="3" id="q11و_3">
+                                <label for="q11و_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11و" value="4" id="q11و_4">
+                                <label for="q11و_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11و" value="5" id="q11و_5">
+                                <label for="q11و_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11و" value="6" id="q11و_6">
+                                <label for="q11و_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ز) الأدوات المدعومة بالذكاء الاصطناعي تعزز تقديم خدمات الصيدلة المعرفية في رعاية ما قبل وأثناء الحمل</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ز" value="1" id="q11ز_1">
+                                <label for="q11ز_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ز" value="2" id="q11ز_2">
+                                <label for="q11ز_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ز" value="3" id="q11ز_3">
+                                <label for="q11ز_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ز" value="4" id="q11ز_4">
+                                <label for="q11ز_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ز" value="5" id="q11ز_5">
+                                <label for="q11ز_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ز" value="6" id="q11ز_6">
+                                <label for="q11ز_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ح) منصات الصحة النفسية الرقمية توفر دعماً قيّماً للمرضى الذين يعانون من القلق والاكتئاب</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ح" value="1" id="q11ح_1">
+                                <label for="q11ح_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ح" value="2" id="q11ح_2">
+                                <label for="q11ح_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ح" value="3" id="q11ح_3">
+                                <label for="q11ح_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ح" value="4" id="q11ح_4">
+                                <label for="q11ح_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ح" value="5" id="q11ح_5">
+                                <label for="q11ح_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ح" value="6" id="q11ح_6">
+                                <label for="q11ح_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ط) استخدام الأدوات الرقمية المدمجة يحسن الكفاءة التشغيلية ويعزز رضا المرضى</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ط" value="1" id="q11ط_1">
+                                <label for="q11ط_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ط" value="2" id="q11ط_2">
+                                <label for="q11ط_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ط" value="3" id="q11ط_3">
+                                <label for="q11ط_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ط" value="4" id="q11ط_4">
+                                <label for="q11ط_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ط" value="5" id="q11ط_5">
+                                <label for="q11ط_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ط" value="6" id="q11ط_6">
+                                <label for="q11ط_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ي) تنفيذ بروتوكولات بيانات مصنفة حسب النوع الاجتماعي أمر حيوي للحد من تحيز الذكاء الاصطناعي</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ي" value="1" id="q11ي_1">
+                                <label for="q11ي_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ي" value="2" id="q11ي_2">
+                                <label for="q11ي_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ي" value="3" id="q11ي_3">
+                                <label for="q11ي_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ي" value="4" id="q11ي_4">
+                                <label for="q11ي_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ي" value="5" id="q11ي_5">
+                                <label for="q11ي_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ي" value="6" id="q11ي_6">
+                                <label for="q11ي_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ك) خدمات الصيدلة عن بعد توسع إمكانية الوصول، خاصة في المناطق النائية</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ك" value="1" id="q11ك_1">
+                                <label for="q11ك_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ك" value="2" id="q11ك_2">
+                                <label for="q11ك_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ك" value="3" id="q11ك_3">
+                                <label for="q11ك_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ك" value="4" id="q11ك_4">
+                                <label for="q11ك_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ك" value="5" id="q11ك_5">
+                                <label for="q11ك_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ك" value="6" id="q11ك_6">
+                                <label for="q11ك_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ل) أنظمة الوصفات الإلكترونية تحسن سلامة خدمات الصيدلة من خلال تقليل الأخطاء الدوائية</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ل" value="1" id="q11ل_1">
+                                <label for="q11ل_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ل" value="2" id="q11ل_2">
+                                <label for="q11ل_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ل" value="3" id="q11ل_3">
+                                <label for="q11ل_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ل" value="4" id="q11ل_4">
+                                <label for="q11ل_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ل" value="5" id="q11ل_5">
+                                <label for="q11ل_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ل" value="6" id="q11ل_6">
+                                <label for="q11ل_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">م) الأنظمة الصيدلانية الذاتية تبسط سير عمل خدمات الصيدلة المعرفية</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11م" value="1" id="q11م_1">
+                                <label for="q11م_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11م" value="2" id="q11م_2">
+                                <label for="q11م_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11م" value="3" id="q11م_3">
+                                <label for="q11م_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11م" value="4" id="q11م_4">
+                                <label for="q11م_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11م" value="5" id="q11م_5">
+                                <label for="q11م_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11م" value="6" id="q11م_6">
+                                <label for="q11م_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-question">ن) المنصات الرقمية المصممة خصيصاً لصحة المرأة توسع بشكل كبير نطاق وجودة الخدمات</span>
+                        <div class="scale-options">
+                            <div class="scale-option">
+                                <input type="radio" name="q11ن" value="1" id="q11ن_1">
+                                <label for="q11ن_1">1. أعارض بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ن" value="2" id="q11ن_2">
+                                <label for="q11ن_2">2. أعارض</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ن" value="3" id="q11ن_3">
+                                <label for="q11ن_3">3. محايد</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ن" value="4" id="q11ن_4">
+                                <label for="q11ن_4">4. أوافق</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ن" value="5" id="q11ن_5">
+                                <label for="q11ن_5">5. أوافق بشدة</label>
+                            </div>
+                            <div class="scale-option">
+                                <input type="radio" name="q11ن" value="6" id="q11ن_6">
+                                <label for="q11ن_6">6. لا ينطبق</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- القسم الرابع -->
+            <div class="section">
+                <div class="section-header orange">القسم الرابع: تقديم خدمات الصيدلة المعرفية الرقمية</div>
+                
+                <div class="question">
+                    <label class="question-label">12. هل تقدم خدمات صيدلة سريرية لصحة المرأة عبر قنوات رقمية؟ <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q12" value="1" id="q12_1"><label for="q12_1">1. نعم</label></div>
+                        <div class="option"><input type="radio" name="q12" value="2" id="q12_2"><label for="q12_2">2. لا</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">13. نسبة الاستشارات التي تستخدم الأدوات الرقمية: <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q13" value="1" id="q13_1"><label for="q13_1">1. 0-20%</label></div>
+                        <div class="option"><input type="radio" name="q13" value="2" id="q13_2"><label for="q13_2">2. 21-40%</label></div>
+                        <div class="option"><input type="radio" name="q13" value="3" id="q13_3"><label for="q13_3">3. 41-60%</label></div>
+                        <div class="option"><input type="radio" name="q13" value="4" id="q13_4"><label for="q13_4">4. 61-80%</label></div>
+                        <div class="option"><input type="radio" name="q13" value="5" id="q13_5"><label for="q13_5">5. 81-100%</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">14. الأدوات/المنصات الرقمية المستخدمة: (اختر كل ما ينطبق) <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="option"><input type="checkbox" name="q14_1" value="1" id="q14_1"><label for="q14_1">1. منصات الاستشارات/المكالمات المرئية</label></div>
+                        <div class="option"><input type="checkbox" name="q14_2" value="2" id="q14_2"><label for="q14_2">2. تطبيقات الصحة المحمولة</label></div>
+                        <div class="option"><input type="checkbox" name="q14_3" value="3" id="q14_3"><label for="q14_3">3. السجلات الصحية الإلكترونية</label></div>
+                        <div class="option"><input type="checkbox" name="q14_4" value="4" id="q14_4"><label for="q14_4">4. تطبيقات التذكير/المتابعة الدوائية</label></div>
+                        <div class="option"><input type="checkbox" name="q14_5" value="5" id="q14_5"><label for="q14_5">5. أدوات دعم القرار المدعومة بالذكاء الاصطناعي</label></div>
+                        <div class="option"><input type="checkbox" name="q14_6" value="6" id="q14_6"><label for="q14_6">6. منصات الصحة النفسية الرقمية</label></div>
+                        <div class="option"><input type="checkbox" name="q14_7" value="7" id="q14_7"><label for="q14_7">7. منصات التواصل الاجتماعي</label></div>
+                        <div class="option"><input type="checkbox" name="q14_8" value="8" id="q14_8"><label for="q14_8">8. أخرى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">15. كيف تصف جاهزية صيدليتك لتنفيذ ابتكارات الصحة الرقمية؟ <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option"><input type="radio" name="q15" value="1" id="q15_1"><label for="q15_1">1. غير جاهز</label></div>
+                        <div class="option"><input type="radio" name="q15" value="2" id="q15_2"><label for="q15_2">2. جاهز قليلاً</label></div>
+                        <div class="option"><input type="radio" name="q15" value="3" id="q15_3"><label for="q15_3">3. جاهز إلى حد ما</label></div>
+                        <div class="option"><input type="radio" name="q15" value="4" id="q15_4"><label for="q15_4">4. جاهز جداً</label></div>
+                        <div class="option"><input type="radio" name="q15" value="5" id="q15_5"><label for="q15_5">5. جاهز بالكامل</label></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- القسم الخامس -->
+            <div class="section">
+                <div class="section-header red">القسم الخامس: الحواجز واحتياجات التدريب</div>
+                
+                <div class="question">
+                    <label class="question-label">16. الحواجز الرئيسية أمام دمج أدوات الصحة الرقمية: (اختر كل ما ينطبق) <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="option"><input type="checkbox" name="q16_1" value="1" id="q16_1"><label for="q16_1">1. قيود عبء العمل ونقص الكوادر</label></div>
+                        <div class="option"><input type="checkbox" name="q16_2" value="2" id="q16_2"><label for="q16_2">2. المهارات والتدريب وسهولة الاستخدام</label></div>
+                        <div class="option"><input type="checkbox" name="q16_3" value="3" id="q16_3"><label for="q16_3">3. التكنولوجيا والبنية التحتية والتكامل</label></div>
+                        <div class="option"><input type="checkbox" name="q16_4" value="4" id="q16_4"><label for="q16_4">4. الحوكمة والخصوصية والمسؤولية القانونية</label></div>
+                        <div class="option"><input type="checkbox" name="q16_5" value="5" id="q16_5"><label for="q16_5">5. انخفاض طلب المرضى</label></div>
+                        <div class="option"><input type="checkbox" name="q16_6" value="6" id="q16_6"><label for="q16_6">6. التمويل والتعويض والعائد على الاستثمار</label></div>
+                        <div class="option"><input type="checkbox" name="q16_7" value="7" id="q16_7"><label for="q16_7">7. القيادة والثقافة والدعم المؤسسي</label></div>
+                        <div class="option"><input type="checkbox" name="q16_8" value="8" id="q16_8"><label for="q16_8">8. وصول المرضى ومحو الأمية الرقمية</label></div>
+                        <div class="option"><input type="checkbox" name="q16_9" value="9" id="q16_9"><label for="q16_9">9. الأدلة والنتائج القابلة للقياس</label></div>
+                        <div class="option"><input type="checkbox" name="q16_10" value="10" id="q16_10"><label for="q16_10">10. أخرى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">17. التدريب أو الدعم المطلوب: (اختر كل ما ينطبق) <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="option"><input type="checkbox" name="q17_1" value="1" id="q17_1"><label for="q17_1">1. المهارات الرقمية الأساسية</label></div>
+                        <div class="option"><input type="checkbox" name="q17_2" value="2" id="q17_2"><label for="q17_2">2. التنقل في أدوات الذكاء الاصطناعي</label></div>
+                        <div class="option"><input type="checkbox" name="q17_3" value="3" id="q17_3"><label for="q17_3">3. التطبيقات السريرية في صحة المرأة</label></div>
+                        <div class="option"><input type="checkbox" name="q17_4" value="4" id="q17_4"><label for="q17_4">4. حماية البيانات والخصوصية والموافقة</label></div>
+                        <div class="option"><input type="checkbox" name="q17_5" value="5" id="q17_5"><label for="q17_5">5. دمج سير العمل وقابلية التشغيل البيني</label></div>
+                        <div class="option"><input type="checkbox" name="q17_6" value="6" id="q17_6"><label for="q17_6">6. تثقيف المرضى والمشاركة الرقمية</label></div>
+                        <div class="option"><input type="checkbox" name="q17_7" value="7" id="q17_7"><label for="q17_7">7. التعاون بين المهنيين</label></div>
+                        <div class="option"><input type="checkbox" name="q17_8" value="8" id="q17_8"><label for="q17_8">8. المراقبة والتقييم</label></div>
+                        <div class="option"><input type="checkbox" name="q17_9" value="9" id="q17_9"><label for="q17_9">9. الدعم العملي</label></div>
+                        <div class="option"><input type="checkbox" name="q17_10" value="10" id="q17_10"><label for="q17_10">10. أخرى</label></div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">18. الدعم الإضافي المطلوب لتحسين تقديم خدمات الصحة الرقمية:</label>
+                    <textarea name="q18" rows="4" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <label class="question-label">19. كيف يمكن للتعاونات الرقمية تحسين خدمات الصيدلة المعرفية لصحة المرأة؟</label>
+                    <textarea name="q19" rows="4" placeholder="اكتب إجابتك هنا..."></textarea>
+                </div>
+            </div>
+            
+            
+        </form>
+        
+        <div class="footer">
+            <p><strong>شكراً لك على وقتك ومشاركتك القيمة!</strong></p>
+            <p>تم إعداد هذا الاستبيان لأغراض البحث العلمي، وجميع المعلومات المقدمة ستبقى سرية ومجهولة الهوية.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('شكراً لإكمال الاستبيان! في النسخة الكاملة، سيتم إرسال البيانات إلى الخادم.');
+        });
+    </script>
+
+<!-- MENA Survey Integration -->
+<script>
+const SURVEY_CONFIG = {
+  webhookURL: 'https://script.google.com/macros/s/AKfycbyBYzwuR5HHvDRwfWJlAF17g6X5Mx8RND4Q1CVgHqocoDNCchX34BCQT1H2OU0nDqLQ/exec',
+  surveyType: 'digital',
+  country: 'ksa',
+  submitButtonText: 'إرسال الاستبيان'
+};
+
+(function() {
+  'use strict';
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSurvey);
+  } else {
+    initSurvey();
+  }
+  
+  function initSurvey() {
+    console.log('✅ Initializing MENA Survey Integration...');
+    console.log('📋 Survey:', SURVEY_CONFIG.surveyType, '-', SURVEY_CONFIG.country.toUpperCase());
+    addSubmitButton();
+    addLoadingOverlay();
+    addMessageContainer();
+  }
+  
+  function addSubmitButton() {
+    const btnContainer = document.createElement('div');
+    btnContainer.style.cssText = 'text-align:center;margin:40px 0;padding:30px 20px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.2)';
+    
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.id = 'mena-submit-btn';
+    btn.innerHTML = '<span style="font-size:1.2em">📝</span> <span>' + SURVEY_CONFIG.submitButtonText + '</span>';
+    btn.style.cssText = 'background:white;color:#667eea;border:none;padding:20px 60px;font-size:1.5em;font-weight:bold;border-radius:12px;cursor:pointer;transition:all 0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.2);font-family:Arial,sans-serif';
+    
+    btn.onmouseenter = function() { this.style.transform = 'scale(1.05)'; this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)'; };
+    btn.onmouseleave = function() { this.style.transform = 'scale(1)'; this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)'; };
+    btn.onclick = handleFormSubmit;
+    
+    btnContainer.appendChild(btn);
+    document.body.appendChild(btnContainer);
+    console.log('✅ Submit button added');
+  }
+  
+  function addLoadingOverlay() {
+    const overlay = document.createElement('div');
+    overlay.id = 'mena-loading';
+    overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9999;justify-content:center;align-items:center';
+    overlay.innerHTML = '<div style="text-align:center;color:white"><div style="border:8px solid #f3f3f3;border-top:8px solid #667eea;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;margin:0 auto 20px"></div><h2>جاري الإرسال...</h2><p>Submitting...</p></div>';
+    
+    const style = document.createElement('style');
+    style.textContent = '@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}';
+    document.head.appendChild(style);
+    document.body.appendChild(overlay);
+  }
+  
+  function addMessageContainer() {
+    const container = document.createElement('div');
+    container.id = 'mena-msg';
+    container.style.cssText = 'display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:40px;border-radius:15px;box-shadow:0 10px 50px rgba(0,0,0,0.3);z-index:10000;max-width:500px;text-align:center';
+    document.body.appendChild(container);
+  }
+  
+  function showLoading() { document.getElementById('mena-loading').style.display = 'flex'; }
+  function hideLoading() { document.getElementById('mena-loading').style.display = 'none'; }
+  
+  function showMessage(msgType, title, message) {
+    const container = document.getElementById('mena-msg');
+    const emoji = msgType === 'success' ? '✅' : '❌';
+    const color = msgType === 'success' ? '#4CAF50' : '#f44336';
+    container.innerHTML = '<div style="font-size:4em;margin-bottom:20px">' + emoji + '</div><h2 style="color:' + color + ';margin-bottom:15px">' + title + '</h2><p style="font-size:1.1em;line-height:1.6;margin-bottom:30px">' + message + '</p><button onclick="document.getElementById(\'mena-msg\').style.display=\'none\'" style="background:' + color + ';color:white;border:none;padding:15px 40px;font-size:1.1em;border-radius:8px;cursor:pointer">حسناً / OK</button>';
+    container.style.display = 'block';
+  }
+  
+  function collectFormData() {
+    const data = {};
+    const inputs = document.querySelectorAll('input,select,textarea');
+    
+    inputs.forEach(function(input, idx) {
+      let val = null;
+      const fieldName = input.name || input.id || 'question_' + (idx + 1);
+      
+      if (input.type === 'radio') {
+        if (input.checked) val = input.value || 'selected';
+      } else if (input.type === 'checkbox') {
+        if (!data[fieldName]) data[fieldName] = [];
+        if (input.checked) data[fieldName].push(input.value || 'checked');
+      } else if (input.tagName === 'SELECT') {
+        val = input.options[input.selectedIndex] ? input.options[input.selectedIndex].value : null;
+      } else if (input.tagName === 'TEXTAREA' || input.type === 'text' || input.type === 'number') {
+        val = input.value;
+      }
+      
+      if (val !== null && val !== undefined && val !== '' && input.type !== 'checkbox') {
+        data[fieldName] = val;
+      }
+    });
+    
+    Object.keys(data).forEach(function(key) {
+      if (Array.isArray(data[key])) data[key] = data[key].join(', ');
+    });
+    
+    return data;
+  }
+  
+  function validateData(data) {
+    if (Object.keys(data).length === 0) {
+      return {valid: false, message: 'الرجاء ملء الإستبيان / Please fill out the survey'};
+    }
+    let hasData = false;
+    for (let key in data) {
+      if (data[key] !== null && data[key] !== undefined && data[key] !== '') {
+        hasData = true;
+        break;
+      }
+    }
+    if (!hasData) {
+      return {valid: false, message: 'الرجاء الإجابة على الأسئلة / Please answer the questions'};
+    }
+    return {valid: true};
+  }
+  
+  function generateHash() {
+    try {
+      const str = [navigator.userAgent, navigator.language, new Date().toDateString(), screen.width + 'x' + screen.height].join('|');
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        const chr = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash = hash & hash;
+      }
+      return 'hash_' + Math.abs(hash);
+    } catch (err) {
+      return 'hash_' + Date.now();
+    }
+  }
+  
+  async function handleFormSubmit() {
+    console.log('📤 Handling form submission...');
+    
+    const responses = collectFormData();
+    console.log('📋 Collected responses:', responses);
+    
+    const validation = validateData(responses);
+    if (!validation.valid) {
+      console.log('❌ Validation failed:', validation.message);
+      showMessage('error', 'خطأ / Error', validation.message);
+      return;
+    }
+    
+    showLoading();
+    
+    try {
+      const ipHash = generateHash();
+      const payload = {
+        surveyType: SURVEY_CONFIG.surveyType,
+        country: SURVEY_CONFIG.country,
+        ipHash: ipHash,
+        responses: responses
+      };
+      
+      console.log('🚀 Submitting data:', payload);
+      
+      await fetch(SURVEY_CONFIG.webhookURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      });
+      
+      hideLoading();
+      console.log('✅ Submission successful!');
+      
+      showMessage('success', 'تم الإرسال بنجاح! / Success!', 'شكراً لمشاركتك في الإستبيان. تم حفظ إجاباتك بنجاح.<br><br>Thank you! Your responses have been saved successfully.');
+      
+      const submitBtn = document.getElementById('mena-submit-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.5';
+        submitBtn.style.cursor = 'not-allowed';
+        submitBtn.innerHTML = '✅ تم الإرسال / Submitted';
+      }
+      
+    } catch (err) {
+      console.error('❌ Submission error:', err);
+      hideLoading();
+      showMessage('error', 'خطأ / Error', 'عذراً، حدث خطأ. الرجاء المحاولة مرة أخرى.<br><br>Sorry, an error occurred. Please try again.');
+    }
+  }
+  
+})();
+</script>
+
+</body>
+</html>

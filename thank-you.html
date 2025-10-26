@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لمشاركتك | Thank You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .success-icon {
+            font-size: 6em;
+            margin-bottom: 20px;
+            animation: bounce 1s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        h1 {
+            color: #4CAF50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            color: #4CAF50;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #90EE90 0%, #98FB98 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .highlight strong {
+            color: #2d5016;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #90EE90;
+            color: #2d5016;
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 5px 20px rgba(144, 238, 144, 0.4);
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 40px 0;
+        }
+
+        .social-share {
+            margin-top: 30px;
+        }
+
+        .social-share h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .subtitle {
+                font-size: 1.3em;
+            }
+
+            .btn {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✅</div>
+        
+        <h1>تم الإرسال بنجاح!</h1>
+        <p class="subtitle">Successfully Submitted!</p>
+
+        <p>
+            شكراً جزيلاً على وقتك ومشاركتك القيمة في هذه الدراسة!
+            <br>
+            Thank you very much for your time and valuable participation in this study!
+        </p>
+
+        <div class="highlight">
+            <p><strong>تم حفظ إجاباتك بنجاح وسيتم استخدامها لتحسين الخدمات الصحية المقدمة للنساء في منطقتنا.</strong></p>
+            <p><strong>Your responses have been successfully saved and will be used to improve health services provided to women in our region.</strong></p>
+        </div>
+
+        <div class="divider"></div>
+
+        <p style="font-size: 1em;">
+            هل تريد المشاركة في استبيان آخر؟
+            <br>
+            Would you like to participate in another survey?
+        </p>
+
+        <a href="../index.html" class="btn">
+            🏠 العودة للصفحة الرئيسية
+            <br>
+            <span style="font-size: 0.8em;">Back to Home</span>
+        </a>
+
+        <div class="divider"></div>
+
+        <div class="social-share">
+            <h3>شارك الاستبيان مع الآخرين | Share the Survey</h3>
+            <p style="font-size: 0.95em; color: #888;">
+                ساعدنا في الوصول لمزيد من المشاركين!
+                <br>
+                Help us reach more participants!
+            </p>
+        </div>
+
+        <p style="font-size: 0.9em; color: #999; margin-top: 40px;">
+            🔒 جميع بياناتك محمية ومجهولة الهوية
+            <br>
+            All your data is protected and anonymous
+        </p>
+    </div>
+
+    <script>
+        // Confetti effect on load
+        window.addEventListener('load', function() {
+            // Simple celebration animation
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.5s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
